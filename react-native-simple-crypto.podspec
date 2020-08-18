@@ -11,7 +11,8 @@ Pod::Spec.new do |s|
   s.homepage      = package_json["homepage"]
   s.source        = { :git => "#{package_json["repository"]["url"]}" }
   s.platform      = :ios, '8.0'
-  s.source_files  = "ios/**/*.{h,m}"
+  s.source_files  = "ios/**/*.{h,m,swift}"
 
   s.dependency "React"
+  s.dependency "OpenSSL-Universal"
 end

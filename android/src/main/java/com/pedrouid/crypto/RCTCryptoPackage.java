@@ -20,6 +20,7 @@ public class RCTCryptoPackage implements ReactPackage {
                 new RCTHmac(reactContext),
                 new RCTPbkdf2(reactContext),
                 new RCTRsa(reactContext),
+                new RCTRsaUtils(),
                 new RandomBytesModule(reactContext)
         );
     }

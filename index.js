@@ -135,7 +135,10 @@ const PBKDF2 = {
   }
 };
 
-const RSA = NativeModules.Rsa;
+const RSA = {
+  ...NativeModules.Rsa,
+  ...NativeModules.RsaUtils
+};
 
 const utils = {
   randomBytes,

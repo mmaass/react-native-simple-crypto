@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E90E13124EC8F3800186639 /* RCTRsaUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E90E13024EC8F3800186639 /* RCTRsaUtils.swift */; };
+		1E90E13324EC8F4400186639 /* RCTRsaUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E90E13224EC8F4400186639 /* RCTRsaUtils.m */; };
 		42F12D9A21E7D98C00519322 /* RNRandomBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F12D9921E7D98C00519322 /* RNRandomBytes.m */; };
 		9643DA86218A0E3800535D00 /* Sha.m in Sources */ = {isa = PBXBuildFile; fileRef = 9643DA84218A0E3800535D00 /* Sha.m */; };
 		9643DA87218A0E3800535D00 /* Shared.m in Sources */ = {isa = PBXBuildFile; fileRef = 9643DA85218A0E3800535D00 /* Shared.m */; };
@@ -35,6 +37,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E90E12F24EC8F3800186639 /* RCTCrypto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTCrypto-Bridging-Header.h"; sourceTree = "<group>"; };
+		1E90E13024EC8F3800186639 /* RCTRsaUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTRsaUtils.swift; sourceTree = "<group>"; };
+		1E90E13224EC8F4400186639 /* RCTRsaUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTRsaUtils.m; sourceTree = "<group>"; };
 		32D980DD1BE9F11C00FA27E5 /* libRCTCrypto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTCrypto.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F12D9821E7D98C00519322 /* RNRandomBytes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNRandomBytes.h; sourceTree = "<group>"; };
 		42F12D9921E7D98C00519322 /* RNRandomBytes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNRandomBytes.m; sourceTree = "<group>"; };
@@ -107,6 +112,9 @@
 				42F12D9821E7D98C00519322 /* RNRandomBytes.h */,
 				42F12D9921E7D98C00519322 /* RNRandomBytes.m */,
 				32D981161BE9F1B600FA27E5 /* lib */,
+				1E90E13024EC8F3800186639 /* RCTRsaUtils.swift */,
+				1E90E12F24EC8F3800186639 /* RCTCrypto-Bridging-Header.h */,
+				1E90E13224EC8F4400186639 /* RCTRsaUtils.m */,
 			);
 			path = RCTCrypto;
 			sourceTree = "<group>";
@@ -163,6 +171,7 @@
 				TargetAttributes = {
 					32D980DC1BE9F11C00FA27E5 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -199,6 +208,8 @@
 				9643DA96218A65B500535D00 /* RCTPbkdf2.m in Sources */,
 				42F12D9A21E7D98C00519322 /* RNRandomBytes.m in Sources */,
 				9643DA90218A5C5200535D00 /* Hmac.m in Sources */,
+				1E90E13124EC8F3800186639 /* RCTRsaUtils.swift in Sources */,
+				1E90E13324EC8F4400186639 /* RCTRsaUtils.m in Sources */,
 				9643DA9E218B77A200535D00 /* RsaFormatter.m in Sources */,
 				9643DA87218A0E3800535D00 /* Shared.m in Sources */,
 				9668CE0421471DE0001D58C3 /* Aes.m in Sources */,
@@ -310,30 +321,39 @@
 		32D980F21BE9F11C00FA27E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../react-native/React/**",
 					"$(SRCROOT)/../../../../../node_modules/react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RCTCrypto/RCTCrypto-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		32D980F31BE9F11C00FA27E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../react-native/React/**",
 					"$(SRCROOT)/../../../../../node_modules/react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RCTCrypto/RCTCrypto-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
