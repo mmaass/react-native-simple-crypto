@@ -90,7 +90,7 @@ typedef void (^SecKeyPerformBlock)(SecKeyRef key);
 - (NSString *)encrypt:(NSString *)message {
     NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
     NSData *encrypted = [self _encrypt: data];
-    return [encrypted base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    return [encrypted base64EncodedStringWithOptions:nil];
 }
 
 - (NSData *)_encrypt:(NSData *)data {
